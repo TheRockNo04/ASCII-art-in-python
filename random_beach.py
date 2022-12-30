@@ -1,16 +1,29 @@
+#This isn't finished yet
+
+
 import random
+import sys
+from termcolor import colored, cprint
+
 print()
-length = 40
+length = 20
 height = 20
 
-sand = "█"
-water = " "
-waves = "⁓"
+sand = "░░"
+water= "  "
+waves= "⁓⁓"
 
-starting_height = random.randint(3,15)
+starting_height = random.randint(10,17)
 
-
-
+character = [
+"🐟",
+"🐟",
+"🐠",
+"🐡",
+"🐬",
+"🦈",
+]
+#I'm aware that emojis aren't part of ascii
 
 
 for i in range(height):
@@ -18,26 +31,34 @@ for i in range(height):
     if i == starting_height:
         for y in range(length):
             if random.randint(0,1) == 1:
-                print(waves, end="")
+                print(colored(sand, 'blue', "on_yellow"), end="")
             else:
-                print(" ", end="")
+                print(colored(sand, 'blue', "on_yellow", attrs=["dark"]), end="")
 
 
     elif i > starting_height:
         for x in range(length):
-            print(sand, end="")
+            
+            print(colored(sand, 'yellow', "on_grey"), end="")
+            
+
+
     elif i < starting_height:
 
-        if starting_height - i <= 2:
+        if starting_height - i <= random.randint(2,3):
             for d in range(length):
                 if random.randint(0,1) == 1:
-                    print(waves, end="")
+                    print(colored(waves, 'white', "on_blue"), end="")
                 else:
-                    print(" ", end="")
+                    print(colored(water, 'white', "on_blue"), end="")
         else:
 
             for z in range(length):
-                print(water, end="")
+                if random.randint(1,10) == 3:
+                    print(colored(character[random.randint(0, len(character)-1)], "white", 'on_blue'), end="")
+                else:
+                    print(colored(water, "white", 'on_blue'), end="")
+                    
 
 
     print()
