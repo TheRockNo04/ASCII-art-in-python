@@ -1,7 +1,7 @@
 import random as rn
 
 height = int(input('Enter height : '))
-characters = ["✪", "※", "❆", "❄︎", "⚙︎", "✵"]
+characters = ["✪", "※", "❆", "❄︎", "⚙︎"]
 
 #Star
 print(" " * height + "★")
