@@ -2,6 +2,7 @@ import random as rn
 height = int(input('Enter height : '))
 
 print(" "*height +"★")
+
 for row in range(height):
     print(' ' * (height-row-1),end='')
     
