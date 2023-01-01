@@ -1,6 +1,6 @@
 import random as rn
 
-height = 10#int(input('Enter height : '))
+height = int(input('Enter height : '))
 
 #Star
 print(" " * height + "★")
