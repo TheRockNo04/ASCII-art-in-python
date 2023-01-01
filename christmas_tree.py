@@ -13,15 +13,15 @@
         █████
         █████
 """
-
+import random
 
 height = int(input('Enter height : '))
 
-
+characters = ["*"]
 
 for i in range(height):
     print(" ", end="")
-print("♢")
+print("⚝")
 
 
 for row in range(height):
@@ -29,7 +29,7 @@ for row in range(height):
         print(' ', end='')
     for i in range(row+1):
         if row%2 == 1:
-            print('*', end='')
+            print(characters[random.randint(0, len(characters)-1)], end='')
         else:
             print('-', end='')
     if row%2 == 1:
