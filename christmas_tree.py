@@ -1,24 +1,7 @@
-"""
-          ♢
-         ---
-        ** **
-       -------
-      **** ****
-     -----------
-    ****** ******
-   ---------------
-  ******** ********
- -------------------
-********** **********
-        █████
-        █████
-"""
-import random
+import random as rn
 
 height = int(input('Enter height : '))
 print()
-
-characters = ["*", "✪","※","❆","❄︎","⚙︎","✵", "*","*","*","*","*","*","*","*","*","*","*","*"]
 
 for i in range(height):
     print(" ", end="")
@@ -26,30 +9,27 @@ print("⚝")
 
 
 for row in range(height):
-    for i in range(height -row -1):
-        print(' ', end='')
-    for i in range(row+1):
+    print(' ' * (height-row-1), end='')
+    
+    for _ in range(row+1):
         if row%2 == 1:
-            print(characters[random.randint(0, len(characters)-1)], end='')
+            print(rn.choice(['*', chr(rn.randint(33, 47))]), end='')
         else:
             print('-', end='')
-    if row%2 == 1:
+    
+    if row%2 == 1: 
         print(' ', end='')
     else:
-        print('-', end="")
-    for i in range(row+1):
+        print('-', end='')
+    
+    for _ in range(row+1):
         if row%2 == 1:
-            print(characters[random.randint(0, len(characters)-1)], end='')
+            print(rn.choice(['*', chr(rn.randint(33, 47))]), end='')
         else:
             print('-', end='')
     print()
 
-
-for x in range(2):
-    for i in range(height - 2):
-        print(" ", end="")
-    for i in range(5):
-        print("█", end="")
-    print()
+for _ in range(2):
+    print(" " * (height - 2) + "█" * 5)
 
 print()
