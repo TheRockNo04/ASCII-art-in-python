@@ -1,7 +1,6 @@
 import random as rn
 
-height = int(input('Enter height : '))
-characters = ["✪", "※", "❆", "❄︎", "⚙︎"]
+height = 10#int(input('Enter height : '))
 
 #Star
 print(" " * height + "★")
@@ -12,7 +11,7 @@ for row in range(height):
     
     for _ in range(row + 1):
         if row%2 == 1: 
-            print(rn.choice(['*', characters[rn.randint(0, len(characters)-1)]]), end='')
+            print(rn.choice(['*', chr(rn.randint(33,47))]), end='')
         else:
             print('-', end='')
     
@@ -20,7 +19,7 @@ for row in range(height):
     else: print('-', end='')
     
     for _ in range(row+1):  
-        if row%2 == 1: print(rn.choice(['*', characters[rn.randint(0, len(characters)-1)]]), end='')
+        if row%2 == 1: print(rn.choice(['*', chr(rn.randint(33,47))]), end='')
         else: print('-', end='')
     print()
 
