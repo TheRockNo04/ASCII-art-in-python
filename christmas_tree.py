@@ -16,8 +16,9 @@
 import random
 
 height = int(input('Enter height : '))
+print()
 
-characters = ["*"]
+characters = ["*", "✪","※","❆","❄︎","⚙︎","✵", "*","*","*","*","*","*","*","*","*","*","*","*"]
 
 for i in range(height):
     print(" ", end="")
@@ -38,7 +39,7 @@ for row in range(height):
         print('-', end="")
     for i in range(row+1):
         if row%2 == 1:
-            print('*', end='')
+            print(characters[random.randint(0, len(characters)-1)], end='')
         else:
             print('-', end='')
     print()
