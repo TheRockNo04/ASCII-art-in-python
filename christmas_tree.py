@@ -15,7 +15,7 @@
 """
 
 import random as rn
-height = 10#int(input('Enter height : '))
+height = int(input('Enter height : '))
 
 print(" "*height +"★")
 for row in range(height):
